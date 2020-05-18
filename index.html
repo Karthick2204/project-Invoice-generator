@@ -1,0 +1,48 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+<title>billing</title>
+</head>
+<body>
+<form name ="input" method="POST" action="">
+	<div class="container">
+	<h1>Dynamic Invoice Generator</h1>
+	<input type="text" class="customername" placeholder="Enter customer name" required>
+    <input type="date" class="date" required>
+	</div>
+    
+	<table id="customers">
+		<tr >
+		    <th>S.No</th>
+			<th>Itemname</th>
+			<th>Item Quantity</th>
+			<th>Item Price</th>
+			<th>Actual amount</th>
+			<th width="20%">RemoveItem</th>
+		</tr>
+		<tr >
+		    <td name='SNo'> 1 </td>
+            <td><input type="text" ></input></td>
+            <td><input type="number" name='itemQuantity' oninput='handleButton(this)' min="0" ></input></td>
+            <td><input type="number" name='itemprice' oninput='handleButton(this)' min="0"></input></td>
+			<td><input type="number" name='actualprice' value="" readonly></input></td>
+			<td><button type='button' id="removebutton" onclick="removeItem(this)">RemoveItem</button></td>
+            			
+		</tr>
+	
+		<tbody id="tbody"></tbody>
+	</table>
+	<label class="bt">
+	TOTAL:
+    <input  size="20" type="number" name="total" value="" readonly ></input></label>
+	<button id="add-item" type="button" onclick="addItem()">Add Item</button><br>
+	<input type="submit" value = "Print" onclick = "window.print()">
+	
+</form>
+    <script src="javascript/mainjs.js"></script>  		
+</body>
+</html>
